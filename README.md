@@ -30,7 +30,7 @@ These methods take time complexity:
 
 ## Doubly Linked List
 
-Similar as Linked List, but the nodes must have one more attribute: previous node reference. Then some operations will be easier, i.e. removeAtFinal(), once you won't have to range the whole list to find the previous neighbour of the last node.
+Similar as Linked List, but the nodes must have one more attribute: previous node reference. Then some operations will be easier, e.g. removeAtFinal(), once you won't have to range the whole list to find the previous neighbour of the last node.
 
 These methods take time complexity:
 
