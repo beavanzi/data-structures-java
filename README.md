@@ -68,10 +68,10 @@ These methods take time complexity (using Linked List to implement):
 
 ## Set
 
-In sets we don't have reapeted elements. So, every time we need to make a insertion, we have to search on whole structure if this element already exists. You are might thinking we must do a lot of searches and you're right. Therefore our search must be quick and we are using Hash Tables to implemented this. The better our spreading function (hash fuction) is, better our search operation will perform.
+In sets we don't have reapeted elements. So, every time we need to make a insertion, we have to search on whole structure if this element already exists. You are might thinking we must do a lot of searches and you're right. Therefore our search must be quick and we are using a Array List of Linked Lists (sort of Hash Table) to implemented this. The better our spreading function (hash fuction) is, better our search operation will perform.
 
 These methods take time complexity (using Linked List to implement):
 
-* add(Object object) - O(m + n) where m is the number of "lines" of table and n is the length of a line
-* remove() - O(m + n)
+* add(Object object) - O(n) where n is the length of a line (Linked List)
+* remove(Object object) - O(n)
 
