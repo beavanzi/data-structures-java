@@ -17,13 +17,14 @@ public class Set {
 
     private int getIndexOfTable(String str) {
         int lettersFromAlphabet = 26;
+        String lowerCase = str.toLowerCase();
+        char firstLetter = lowerCase.charAt(0);
 
-        return str.toLowerCase().charAt(0) % lettersFromAlphabet;
+        return firstLetter % lettersFromAlphabet;
     }
 
     public void add(String str){
-        int index = getIndexOfTable(str);
-        List<String> list = table.get(index);
+        List<String> list = getListOfTable(str);
 
         if (!list.contains(str)) {
             list.add(str);
@@ -31,15 +32,17 @@ public class Set {
     }
 
     public void remove(String str){
-      int index = getIndexOfTable(str);
-      List<String> list = table.get(index);
+      List<String> list = getListOfTable(str);
 
       if (list.contains(str)) {
           list.remove(str);
       }
     }
 
-
+    private List<String> getListOfTable(String str) {
+        int index = getIndexOfTable(str);
+        return table.get(index);
+    }
 
     @Override
     public String toString() {

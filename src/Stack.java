@@ -9,7 +9,8 @@ public class Stack {
     }
 
     public String pop() {
-        return strings.remove(strings.size() - 1);
+        int indexOfTop = strings.size() - 1;
+        return strings.remove(indexOfTop);
     }
 
     public boolean isEmpty() {

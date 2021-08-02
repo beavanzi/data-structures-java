@@ -16,6 +16,10 @@ public class LinkedList {
         return position >= 0 && position < totalOfElements;
     }
 
+    private Cell getNext(Cell current) {
+        return current.getNext();
+    }
+
     private Cell getCellByPosition(int position) {
         if(!occupied(position)){
             throw new IllegalArgumentException("Invalid position!");
@@ -24,7 +28,7 @@ public class LinkedList {
         Cell current = first;
 
         for(int i = 0; i < position; i++){
-            current = current.getNext();
+            getNext(current);
         }
 
         return current;
@@ -73,23 +77,21 @@ public class LinkedList {
           throw new IllegalArgumentException("List is already empty!");
       }
 
-      first = first.getNext();
+      first = getNext(first);
       totalOfElements--;
 
       if (isListEmpty()) last = null;
 
     };
 
-    private boolean hasLessThanTwo(){
-        return totalOfElements <= 1;
-    }
+    private boolean hasLessThanTwo() { return totalOfElements <= 1; }
 
     public void remove(int position) {
         if (hasLessThanTwo()) {
             removeAtBeginning();
         } else {
             Cell previous = getCellByPosition(position - 1);
-            Cell current = previous.getNext();
+            Cell current = getNext(previous);
 
             previous.setNext(current.getNext());
             totalOfElements--;
@@ -103,7 +105,7 @@ public class LinkedList {
 
         for(int i = 0; i < totalOfElements; i++){
             if (current.getElement() == o) return true;
-            current = current.getNext();
+            getNext(current);
         }
 
         return false;
@@ -122,8 +124,7 @@ public class LinkedList {
        for (int i=0; i< totalOfElements; i++) {
            builder.append(current.getElement());
            builder.append(", ");
-
-           current = current.getNext();
+           getNext(current);
        }
 
        builder.append("]");

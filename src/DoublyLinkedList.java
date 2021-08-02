@@ -16,6 +16,10 @@ public class DoublyLinkedList {
         return position >= 0 && position < totalOfElements;
     }
 
+    private Cell getNext(Cell current) {
+        return current.getNext();
+    }
+
     private Cell getCellByPosition(int position) {
         if(!occupied(position)){
             throw new IllegalArgumentException("Invalid position!");
@@ -24,7 +28,7 @@ public class DoublyLinkedList {
         Cell current = first;
 
         for(int i = 0; i < position; i++){
-            current = current.getNext();
+            getNext(current);
         }
 
         return current;
@@ -84,7 +88,7 @@ public class DoublyLinkedList {
             throw new IllegalArgumentException("List is already empty!");
         }
 
-        first = first.getNext();
+        first = getNext(first);
         totalOfElements--;
 
         if (isListEmpty()) last = null;
@@ -122,8 +126,8 @@ public class DoublyLinkedList {
             removeAtFinal();
         } else {
             Cell previous = getCellByPosition(position - 1);
-            Cell current = previous.getNext();
-            Cell next = current.getNext();
+            Cell current = getNext(previous);
+            Cell next = getNext(current);
 
             previous.setNext(next);
             next.setPrevious(previous);
@@ -138,7 +142,7 @@ public class DoublyLinkedList {
 
         for(int i = 0; i < totalOfElements; i++){
             if (current.getElement() == o) return true;
-            current = current.getNext();
+            getNext(current);
         }
 
         return false;
@@ -158,7 +162,7 @@ public class DoublyLinkedList {
             builder.append(current.getElement());
             builder.append(", ");
 
-            current = current.getNext();
+            getNext(current);
         }
 
         builder.append("]");
