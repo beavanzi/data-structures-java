@@ -19,5 +19,5 @@ public class Queue {
     public String toString() {
         return queue.toString();
     }
-    
+
 }

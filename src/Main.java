@@ -120,6 +120,26 @@ public class Main {
         System.out.println(queue.isEmpty());
     }
 
+    public static void setCalls() {
+        Set set = new Set();
+
+        set.add("Mauricio");
+        System.out.println(set);
+
+        set.add("Mauricio");
+        System.out.println(set);
+
+        set.add("Marcelo");
+        System.out.println(set);
+
+        set.add("Guilherme");
+        System.out.println(set);
+
+        set.remove("Mauricio");
+        System.out.println(set);
+
+    }
+
 
     public static void main(String[] args) {
 
@@ -127,7 +147,8 @@ public class Main {
         // linkedListCalls();
         // doublyLinkedListCalls();
         // stackCalls();
-        queueCalls();
+        // queueCalls();
+        setCalls();
 
     }
 }
