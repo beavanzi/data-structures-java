@@ -1,2 +1,2 @@
 # data-structures-java
-This rep include implementations of the main data structures.
+This rep include implementations of Vector, Linked List, Doubly Linked List, Queue, Stack and Set using Java and Clean Code principles.
